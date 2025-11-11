@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider } from "@tanstack/react-router";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Analytics } from '@vercel/analytics/react';
 
 import { router } from "./router";
 
@@ -17,6 +18,7 @@ if (rootElement && !rootElement.innerHTML) {
 		<StrictMode>
 			<QueryClientProvider client={queryClient}>
 				<RouterProvider router={router} />
+				<Analytics/>
 			</QueryClientProvider>
 		</StrictMode>,
 	);
